@@ -1,0 +1,159 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 50%;
+  font-family: "Poppins", sans-serif;
+}
+
+.puzzle-container {
+  height: 180%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #0c292c, #83c5be);
+  color: white;
+  text-align: center;
+}
+
+.game-area {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px 70px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.stats-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  padding: 6px;
+}
+
+.submenu button {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.submenu button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.board {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 320px;
+}
+
+.tile {
+  width: 90px;
+  height: 90px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.25);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tile:hover {
+  transform: scale(1.05);
+}
+
+.tile.empty {
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+.tile.hint {
+  border: 3px solid #ffd166;
+  box-shadow: 0 0 15px #ffd166;
+}
+
+.message {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.win {
+  color: #ffd60a;
+}
+
+.lose {
+  color: #ef233c;
+}
+
+@media (max-width: 600px) {
+  .game-area {
+    padding: 20px;
+  }
+
+  .tile {
+    width: 70px;
+    height: 70px;
+  }
+}

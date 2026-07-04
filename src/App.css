@@ -1,0 +1,13 @@
+#root {
+  max-width: 900vw;
+  max-height: 200vh;
+  margin-right: 200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.title h1{
+  margin: 30px 20px;
+}
