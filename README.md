@@ -23,7 +23,6 @@ A web-based jigsaw puzzle game. Pick or upload an image, choose a difficulty, an
 
 ## Project Structure
 
-```
 jigsaw-puzzle/
 ├── client/               # React app
 │   ├── public/
@@ -36,7 +35,6 @@ jigsaw-puzzle/
 │   ├── uploads/          # Uploaded images
 │   └── server.js
 └── README.md
-```
 
 ## Getting Started
 
@@ -91,9 +89,7 @@ App runs on `http://localhost:3000`.
 
 Create a `.env` file inside `server/`:
 
-```
 PORT=5000
-```
 
 ## Future Improvements
 
