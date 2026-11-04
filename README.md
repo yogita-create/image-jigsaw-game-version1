@@ -1,99 +1,212 @@
-# React + Vite
 # 🧩 Jigsaw Image Puzzle
 
-A web-based jigsaw puzzle game. Pick or upload an image, choose a difficulty, and drag the pieces into place. Built with React on the frontend and Node.js + Express on the backend.
+A responsive and interactive **Jigsaw Image Puzzle Game** built with React and Vite. Users can choose from preset images or upload their own pictures, select a difficulty level, and solve puzzles by arranging shuffled pieces in their correct positions.
 
-## Features
+The application provides an engaging puzzle-solving experience with drag-and-drop interactions, a timer, move tracking, and a completion message.
 
-- Choose from preset images 
-- Multiple difficulty levels (4x4, 9x9,12x12 etc.)
-- Drag and drop pieces to solve the puzzle
-- Shuffle / restart anytime
-- Timer and move counter
-- Win message when the puzzle is complete
-- Responsive layout (desktop and mobile)
+---
 
-## Tech Stack
+## ✨ Features
 
-| Layer    | Tech                          |
-| -------- | ----------------------------- |
-| Frontend | React, HTML, CSS              |
-| Backend  | Node.js, Express.js           |
-| Tooling  | npm, Git                      |
+- **Image Selection:** Choose from a collection of preset puzzle images.
+- **Custom Image Upload:** Upload your own images to create personalized puzzles.
+- **Multiple Difficulty Levels:** Select from different grid sizes, including 4×4, 9×9, and 12×12.
+- **Interactive Gameplay:** Drag and drop puzzle pieces to their correct positions.
+- **Shuffle & Restart:** Shuffle pieces or restart the game whenever needed.
+- **Timer:** Track the time taken to complete the puzzle.
+- **Move Counter:** Keep track of every move made during gameplay.
+- **Completion Detection:** Automatically detect when all puzzle pieces are correctly arranged.
+- **Responsive Design:** Enjoy a smooth gaming experience across desktop, tablet, and mobile devices.
 
-## Project Structure
+---
 
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Frontend | React.js, Vite, HTML5, CSS3, JavaScript |
+| Backend | Node.js, Express.js |
+| API | REST API |
+| Package Manager | npm |
+| Version Control | Git & GitHub |
+
+---
+
+## 📁 Project Structure
+
+```text
 jigsaw-puzzle/
-├── client/               # React app
+│
+├── client/                  # React + Vite frontend
 │   ├── public/
-│   └── src/
-│       ├── components/   # Board, Piece, Controls, etc.
-│       ├── App.js
-│       └── index.css
-├── server/               # Express API
-│   ├── routes/
-│   ├── uploads/          # Uploaded images
-│   └── server.js
+│   ├── src/
+│   │   ├── components/      # Reusable UI components
+│   │   ├── assets/           # Images and static assets
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   └── vite.config.js
+│
+├── server/                  # Node.js + Express backend
+│   ├── routes/               # API routes
+│   ├── uploads/              # Uploaded images
+│   ├── server.js
+│   └── package.json
+│
+├── .gitignore
 └── README.md
+```
 
-## Getting Started
+---
+
+## 🚀 Getting Started
+
+Follow these instructions to set up and run the project locally.
 
 ### Prerequisites
 
-- Node.js (v18 or above)
-- npm
+Make sure you have the following installed:
 
-### 1. Clone the repo
+- [Node.js](https://nodejs.org/) (v18 or above)
+- npm (Node Package Manager)
+- Git
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/jigsaw-puzzle.git
+```
+
+Navigate to the project directory:
+
+```bash
 cd jigsaw-puzzle
 ```
 
-### 2. Setup the backend
+### 2. Configure the Backend
+
+Navigate to the server directory:
 
 ```bash
 cd server
 npm install
+```
+
+Create a `.env` file inside the `server` directory:
+
+```env
+PORT=5000
+```
+
+Start the backend server:
+
+```bash
 npm start
 ```
 
-Server runs on `http://localhost:5000`.
+The backend server will run at:
 
-### 3. Setup the frontend
+`http://localhost:5000`
+
+### 3. Configure the Frontend
+
+Open a new terminal and navigate to the client directory:
 
 ```bash
 cd client
 npm install
-npm start
 ```
 
-App runs on `http://localhost:3000`.
+Start the Vite development server:
 
-## How It Works
+```bash
+npm run dev
+```
 
-1. The user selects an image and a grid size.
-2. The image is split into equal pieces (rows x columns) in the browser.
-3. Pieces are shuffled randomly and placed on the board.
-4. The user drags pieces to swap or place them in the correct position.
-5. When every piece is in the right spot, the game ends and shows the time and moves.
+The frontend application will be available at the URL displayed in your terminal, typically:
 
-## API Endpoints
+`http://localhost:5173`
 
-| Method | Endpoint          | Description              |
-| ------ | ----------------- | ------------------------ |
-| GET    | `/api/images`     | Get list of preset images |
-| POST   | `/api/upload`     | Upload a custom image    |
+---
 
-## Environment Variables
+## ⚙️ How It Works
 
-Create a `.env` file inside `server/`:
+The application follows a simple and interactive puzzle-solving workflow:
 
+1. **Select an Image:** Choose a predefined image or upload a custom picture.
+2. **Choose Difficulty:** Select the desired puzzle grid size.
+3. **Generate Puzzle:** The selected image is divided into multiple pieces based on the chosen grid.
+4. **Shuffle Pieces:** Puzzle pieces are randomly rearranged to create the challenge.
+5. **Solve the Puzzle:** Drag and drop pieces into their corresponding positions.
+6. **Track Progress:** Monitor your moves and completion time while playing.
+7. **Complete the Game:** A success message appears when all pieces are placed correctly.
+
+---
+
+## 🔌 API Endpoints
+
+The Express.js backend provides REST API endpoints for image management.
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/images` | Retrieve available preset images |
+| POST | `/api/upload` | Upload a custom puzzle image |
+
+---
+
+## 🔐 Environment Configuration
+
+The backend uses environment variables for configuration.
+
+**Server `.env` file:**
+
+```env
 PORT=5000
+```
 
-## Future Improvements
+Make sure the `.env` file is included in `.gitignore` to avoid committing sensitive configuration details.
 
-- Leaderboard with best times
-- User login and saved progress
-- Hint button
-- Multiplayer mode
+---
+
+## 🔮 Future Enhancements
+
+The following features can be considered for future releases:
+
+- 🏆 Leaderboard to display top scores and completion times.
+- 👤 User authentication and personalized profiles.
+- 💡 Hint functionality to help players solve difficult puzzles.
+- 💾 Save and resume puzzle progress.
+- 🌐 Multiplayer puzzle-solving experience.
+- 📊 Game statistics and performance tracking.
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome!
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Push the branch to your fork.
+5. Submit a Pull Request.
+
+---
+
+## 👩‍💻 Author
+
+**Yogita Sawant**
+
+- GitHub: [yogita-create](https://github.com/yogita-create)
+- LinkedIn: [Yogita Sawant](https://www.linkedin.com/in/yogita-sawant-webdev/)
+
+---
+
+<p align="center">
+  ⭐ If you find this project interesting, consider giving it a star!
+</p>
+
+<p align="center">
+  Built with ❤️ using React, Vite, and Node.js.
+</p>
